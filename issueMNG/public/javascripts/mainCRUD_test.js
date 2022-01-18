@@ -8,19 +8,19 @@ window.onload = function(){
 //작업 : router 에게 Issue 페이지를 요청해주는 함수
 //return : None
 function goIssuePage(){
-    location.href='/issueTest'
+    location.href='/issue'
 }
 
 //lastUpdate(22-01-12)
 //작업 : router 에게 Project 페이지를 요청해주는 함수
 //return : None
 function goProjectPage(){
-    location.href='/projectTest'
+    location.href='/project'
 }
 
 //lastUpdate(22-01-12)
 //작업 : router 에게 Review 페이지를 요청해주는 함수
 //return : None
 function goReviewPage(){
-    location.href='/reviewTest'
+    location.href='/review'
 }

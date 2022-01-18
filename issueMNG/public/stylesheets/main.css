@@ -1,0 +1,18 @@
+/*화면 px을 가로영역 420px 으로 큰틀을 잡았다 => signup 페이지와 마찬가지로 화면전체를 가운데 정렬*/
+.main_content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.main_content > div {
+    width: 360px;
+    height: 100%;
+    background-color: red;
+}
+.main_content > div > div {
+    width: 100%;
+    height: 100%;
+}

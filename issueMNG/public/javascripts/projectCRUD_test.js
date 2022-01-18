@@ -9,8 +9,9 @@ let projectList // 현재 화면에 불러온 값
 //작업 : 프로젝트 CRUD 테스트에서 module 쪽으로 input값을 넘기는 함수
 //return : None
 function ProjectCreateTest(){
+
     $.ajax({
-        url: '/project/create',
+        url: '/project/insertMany',
         type: 'post',
         data: {
             projectTitle: document.getElementsByClassName('project_title_info')[0].value,
@@ -18,7 +19,7 @@ function ProjectCreateTest(){
             projectUser : document.getElementsByClassName('project_user_info')[0].value
         },
         success: function (result){
-            return result
+            console.log(result)
         }
     })
 }
@@ -29,7 +30,7 @@ function ProjectCreateTest(){
 function ProjectReadTest(){
 
     $.ajax({
-        url: '/project/read',
+        url: '/project/find',
         type: 'post',
         success: function (result){
 
@@ -57,13 +58,6 @@ function ProjectReadTest(){
 }
 
 //lastUpdate(22-01-13)
-//작업 : 프로젝트 값을 수정하는 함수
-//return : None
-function ProjectModifyTest(num){
-
-}
-
-//lastUpdate(22-01-13)
 //작업 : 프로젝트 값을 삭제하는 함수
 //return : None
 function ProjectDeleteTest(num){
@@ -71,7 +65,7 @@ function ProjectDeleteTest(num){
     console.log(projectList[num]._id)
 
     $.ajax({
-        url: '/project/delete',
+        url: '/project/deleteMany',
         type: 'delete',
         async: false,
         datatype: 'json',
@@ -94,7 +88,7 @@ function ProjectDeleteTest(num){
 function ProjectUpdateTest(num){
 
     $.ajax({
-        url: '/project/update',
+        url: '/project/updateMany',
         type: 'patch',
         async: false,
         datatype: 'json',

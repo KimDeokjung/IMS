@@ -1,0 +1,44 @@
+.issue_create_btn{
+    width: 270px;
+    height: 20px;
+
+    margin-top: 30px;
+
+    background-color: #3e9c67;
+    cursor: pointer;
+    text-align: center;
+}
+
+.issue_read_btn{
+    width: 270px;
+    height: 20px;
+
+    margin-top: 30px;
+
+    background-color: #3e999c;
+    cursor: pointer;
+    text-align: center;
+}
+
+.issue_list{
+    cursor: pointer;
+}
+
+.issue_list:hover{
+    background-color: gray;
+}
+
+.issue_del_btn{
+
+}
+
+.issue_modify_btn{
+
+}
+
+.issue_calendar_btn{
+    width: 100px;
+    height: 30px;
+    background-color: skyblue;
+    cursor: pointer;
+}

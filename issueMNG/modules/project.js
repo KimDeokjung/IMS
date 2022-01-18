@@ -4,8 +4,7 @@ var Project = require("../model/project")
 //lastUpdate(22-01-13)
 //작업 : req로 들어온 json을 mongoDB에 저장 / mongoDB에 저장 후 저장 결과를 res에 보낸다.
 //return : Boolean
-exports.putData = function(req, res, callback){
-
+exports.insertMany = function(req, res, callback){
     var project = new Project({
         Title : req.body.projectTitle,
         Explain : req.body.projectExplain,
@@ -31,7 +30,7 @@ exports.putData = function(req, res, callback){
 //                  projectExplain : String
 //                  projectUser : String
 //              }
-exports.readData = function(req, res, callback){
+exports.find = function(req, res, callback){
     Project.find(function(err, project){
         if(err) console.log(err);
         return callback(project)
@@ -42,7 +41,7 @@ exports.readData = function(req, res, callback){
 //lastUpdate(22-01-13)
 //작업 : 현재 MongoDB에 들어있는 데이터중 req로 들어온 ID를 가진걸 삭제한다.
 //return : Boolean
-exports.delData = function (req, res, callback){
+exports.deleteMany = function (req, res, callback){
 
     Project.findById(req.body.ID, function(err, project){
         if(err) return callback(false);
@@ -61,7 +60,7 @@ exports.delData = function (req, res, callback){
 //lastUpdate(22-01-14)
 //작업 : 현재 MongoDB에 들어있는 데이터중 req로 들어온 ID를 새로운 값으로 변경한다.
 //return : Boolean
-exports.upDateData = function (req, res, callback){
+exports.updateMany = function (req, res, callback){
 
     Project.findById(req.body.ID, function(err, project){
 
