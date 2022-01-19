@@ -10,14 +10,28 @@ let projectList // 현재 화면에 불러온 값
 //return : None
 function ProjectCreateTest(){
 
+    let projectMembersList = []
+    const projectMembers = document.getElementsByClassName('project_members_info')
+
+    for (let i = 0; i < 4; i++){
+        if (projectMembers[i].checked){
+            projectMembersList.push({
+                "name" : projectMembers[i].value
+            })
+        }
+    }
+
     $.ajax({
         url: '/project/insertMany',
         type: 'post',
         data: {
             projectTitle: document.getElementsByClassName('project_title_info')[0].value,
             projectExplain : document.getElementsByClassName('project_explain_info')[0].value,
-            projectUser : document.getElementsByClassName('project_user_info')[0].value
+            projectHost : document.getElementsByClassName('project_host_info')[0].value,
+            projectCategory : document.getElementsByClassName('project_category_info')[0].value,
+            projectMembers : JSON.stringify(projectMembersList)
         },
+        traditional: true,
         success: function (result){
             console.log(result)
         }
@@ -61,8 +75,6 @@ function ProjectReadTest(){
 //작업 : 프로젝트 값을 삭제하는 함수
 //return : None
 function ProjectDeleteTest(num){
-
-    console.log(projectList[num]._id)
 
     $.ajax({
         url: '/project/deleteMany',

@@ -7,6 +7,9 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='/stylesheets/issueCRUD_test.css' />
 
+    <!--javaScript -->
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/javascripts/issueCRUD_test.js"></script>
 </head>
 <body>
 <h1>이슈 CRUD 테스트 장소</h1>
@@ -14,42 +17,30 @@
 <div>
 
     <div>
-        이슈 이름 :
-        <input class = "issue_title_info">
-    </div>
-
-    <div>
         이슈 설명 :
         <input class = "issue_explain_info">
     </div>
 
     <div>
-        이슈 유저 :
-        <input class = "issue_user_info">
-    </div>
-
-    <div>
         이슈 연관 프로젝트 :
-        <input>
+        <input class = "issue_project_id_info">
     </div>
 
-    <div>
-        이슈 연관 담당자 :
-        <input>
-    </div>
 
     <div>
         이슈 연관 진행도 :
-        <input>
+        <input class = "issue_progress_info">
     </div>
 
     <div>
         <div>
-            이슈 마감일 : 몇월 몇일
+            이슈 마감일
         </div>
-        <div class = "issue_calendar_btn">
-            달력 등장 버튼
-        </div>
+            <input
+                    class = "issue_deadline_info"
+                    type="date" id="start" name="trip-start"
+                    value="2022-01-01"
+                    min="2022-01-01" max="2024-12-31">
     </div>
 
     <div class="issue_create_btn">

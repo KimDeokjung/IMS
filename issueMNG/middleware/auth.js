@@ -1,5 +1,6 @@
 var jwt = require('jsonwebtoken');
-var userRepository = require('../modules/auth.js');
+var userRepository = require('../model/user');
+var config = require('../config/config')
 
 const AUTH_ERROR = { message: 'Authentication Error' };
 
@@ -13,16 +14,16 @@ module.exports.isAuth = async (req, res, next) => {
     // TODO: Make it secure!
     jwt.verify(
         token,
-        'jsonwebtoken',
+        `${config.jwtInfo.jwtSecretKey}`,
         async (error, decoded) => {
             if (error) {
                 return res.status(401).json(AUTH_ERROR);
             }
-            // const user = await userRepository.findById(decoded.id);
-            // if (!user) {
-            //     return res.status(401).json(AUTH_ERROR);
-            // }
-            // req.userId = user.id; // req.customData
+            const user = await userRepository.findOne({_id:decoded._id});
+            if (!user) {
+                return res.status(401).json(AUTH_ERROR);
+            }
+            req.userId = user._id; // req.customData
             next();
         }
     );

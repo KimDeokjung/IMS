@@ -8,11 +8,5 @@ router.get('/', function(req, res, next) {
   res.render('mainCRUD_test', { title: 'Express' });
 });
 
-/* Get Issue Page. */
-
-
-/* Get Review Page. */
-
-
 
 module.exports = router;

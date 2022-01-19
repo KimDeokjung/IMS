@@ -1,14 +1,17 @@
 var mongoose = require('mongoose');
 var Project = require("../model/project")
 
-//lastUpdate(22-01-13)
+//lastUpdate(22-01-19)
 //작업 : req로 들어온 json을 mongoDB에 저장 / mongoDB에 저장 후 저장 결과를 res에 보낸다.
 //return : Boolean
 exports.insertMany = function(req, res, callback){
+
     var project = new Project({
         Title : req.body.projectTitle,
         Explain : req.body.projectExplain,
-        User : req.body.projectUser,
+        Category : req.body.projectCategory,
+        Host : req.body.projectHost,
+        Members : req.body.projectMembers,
         Created: Date.now()
     })
 

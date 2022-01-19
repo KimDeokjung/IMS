@@ -17,22 +17,19 @@ router.get('/', function(req, res, next) {
 //req : json 형식{
 //                  projectTitle : String
 //                  projectExplain : String
-//                  projectUser : String
+//                  projectHost : String
+//                  projectCategory : String
+//                  projectMembers : Array
 //               }
 //res : boolean 형태 (동작이 잘 끝났는지 여부)
-router.post('/insertMany', validateProject, function(req, res, next){
+router.post('/insertMany', function(req, res, next){
   project.insertMany(req, res, function(callback){
     res.send(callback)
   });
 })
 
 
-//Project 생성 Post API
-//req : json 형식{
-//                  projectTitle : String
-//                  projectExplain : String
-//                  projectUser : String
-//               }
+//Project 검색 Post API
 //res : boolean 형태 (동작이 잘 끝났는지 여부)
 router.post('/find', function(req, res, next){
     project.find(req, res, function(callback){
