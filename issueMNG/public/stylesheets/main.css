@@ -1,18 +1,832 @@
 /*화면 px을 가로영역 420px 으로 큰틀을 잡았다 => signup 페이지와 마찬가지로 화면전체를 가운데 정렬*/
+
+
+.main_header{
+    width: 100%;
+    height: 46px;
+    border-bottom: 3px solid #C4C4C4;
+    display: flex;
+}
+
+.main_header_text{
+    margin: auto;
+    padding-right: 40px;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: #C4C4C4;
+}
+
+.main_header_search_icon_area{
+    margin-right: 20px;
+    display: flex;
+}
+
+.main_header_search_icon{
+    width: 44px;
+    height: 44px;
+    margin: auto;
+}
+
+.main_title_area{
+    height: 46px;
+    display: flex;
+}
+
+
+.main_title_middle_area{
+    width: 50%;
+    display: flex;
+}
+
+.main_title_text{
+    margin: auto;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.main_title_left_area{
+    width: 25%;
+}
+
+.main_title_right_area{
+    width: 25%;
+}
+
+.main_topbar_area{
+    height: 40px;
+    background-color: #C4C4C4;
+    display: flex;
+}
+
+
+.main_maring_auto{
+    margin: auto;
+}
+
+.main_category_area{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    width: 96px;
+    margin: auto;
+    display: flex;
+}
+
+.main_upload_project_area{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    width: 132px;
+    margin: auto;
+    display: flex;
+}
+
+.main_create_project_area{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    width: 132px;
+    margin: auto;
+    display: flex;
+}
+.main_project_area{
+    background: #FFFFFF;
+    height: 150px;
+    margin-top: 29px;
+    margin-bottom: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.main_project_top_area{
+    height: 123px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 10px 10px 0 0;
+    background: #C4C4C4;
+    display: flex;
+}
+
+.main_project_bottom_area{
+    height: 35px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 0 0 10px 10px;
+    text-align: left;
+}
+
+.main_project_defalt_icon{
+    margin: auto;
+    height: 46px;
+    width: 46px;
+}
+
+.main_project_title{
+    display:inline-block;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    width: 250px;
+    text-align: left;
+    margin-top: 7.5px;
+    margin-left: 10px;
+}
+
+.main_project_link_area{
+    float:right;
+    display:flex;
+    margin-top: 7.5px;
+    margin-right: 10px;
+}
+
+.main_project_link{
+
+}
+
 .main_content {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    flex-direction: column;
+    text-align: center;
 }
+
 .main_content > div {
     width: 360px;
     height: 100%;
-    background-color: red;
+    display: inline-block;
 }
-.main_content > div > div {
+
+.main_modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+
     width: 100%;
     height: 100%;
+
+    display: none;
+
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.main_modal.show {
+    display: block;
+}
+
+.main_modal_body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 269px;
+    height: 487px;
+
+    padding: 10px;
+
+    text-align: center;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.main_modal_project_thumbnail_area{
+    width: 84px;
+    height: 84px;
+    background: #E6E6E6;
+    border-radius: 10px;
+    display: flex;
+    margin: auto;
+}
+
+.main_modal_project_thumbnail{
+    width: 27px;
+    height: 38px;
+    display: flex;
+    margin: auto;
+}
+
+.main_modal_header_title{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.main_modal_delete_area{
+    display: flex;
+    margin-left: 150px;
+}
+
+.main_modal_header{
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.main_modal_project_title_area{
+    width: 100%;
+}
+
+.main_modal_project_title_input{
+    margin-top: 20px;
+    width: 250px;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    padding-left: 5px;
+    font-size: 14px;
+    border-width: 0 0 1.5px 0;
+    border-color: #C4C4C4;
+    border-style: solid;
+}
+
+.main_modal_project_title_input:focus{
+    outline:none;
+    border-color: #0000FF;
+}
+
+.main_modal_project_title_input::placeholder{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: #C4C4C4;
+}
+
+.main_modal_project_option_area{
+    margin-top: 30px;
+    height: 90px;
+    width: 100%;
+}
+
+.main_modal_text_area{
+    width: 100%;
+    height: 145px;
+    background: #E5E5E5;
+    border-radius: 10px;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.main_modal_text_area:focus{
+    outline:none;
+    border-color: #0000FF;
+    background-color: #FFFFFF;
+}
+
+.main_modal_project_option_piece{
+    height: 50%;
+    display: flex;
+}
+
+.main_modal_project_master_area{
+    display: flex;
+    width: 50%;
+    height: 100%;
+}
+
+.main_modal_project_member_area{
+    display: flex;
+    width: 50%;
+    height: 100%;
+}
+
+.main_modal_project_category_area{
+    display: flex;
+    width: 50%;
+    height: 100%;
+}
+
+.main_modal_project_private_area{
+    display: flex;
+    width: 50%;
+    height: 100%;
+
+}
+
+.main_modal_project_option_icon{
+    display: flex;
+    margin: auto 0;
+    width: 19.16px;
+    height: 16.35px;
+}
+
+.main_modal_project_option_filter_icon{
+    margin: auto 0;
+    display: flex;
+}
+
+.main_modal_project_option_title{
+    margin: auto 9px auto 8px;
+    display: flex;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: #9FA0A0;
+}
+
+.main_modal_master_modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.main_modal_master_modal.show {
+    display: block;
+}
+
+.main_modal_master_modal_body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 218px;
+    height: 221px;
+
+    padding: 10px;
+
+    text-align: center;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+
+.main_modal_master_modal_header_title{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    margin-left: 84px;
+}
+
+.main_modal_master_modal_delete_area{
+    display: flex;
+    margin-left: 47px;
+}
+
+.main_modal_master_modal_header{
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.main_modal_master_modal_search_area{
+    display: flex;
+}
+
+.main_modal_master_modal_search_input{
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 2px solid #C4C4C4;
+    width: 160px;
+    height: 30px;
+    margin: auto;
+    padding-right: 30px;
+}
+
+.main_modal_master_modal_search_input:focus{
+    border-bottom: 2px solid #0000FF;
+}
+
+.main_modal_master_modal_search_input:focus{
+    outline: #FFFFFF;
+}
+
+.main_modal_master_modal_search_input::placeholder{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: #C4C4C4;
+}
+
+.main_modal_master_modal_user_info_detail{
+    width: 190px;
+    height: 137px;
+    margin: auto;
+    overflow: auto;
+}
+
+.main_modal_master_modal_user_info_area{
+    display: flex;
+}
+
+.main_modal_master_modal_user_profile{
+    width: 18px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: #C4C4C4;
+}
+
+.main_modal_master_modal_user_info_detail_area{
+    display: flex;
+    margin-top: 10px;
+}
+
+.main_modal_master_modal_user_name{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.74);
+}
+
+.main_modal_master_modal_user_name_area{
+    margin-left: 3px;
+    display: flex;
+}
+
+.main_modal_master_modal_user_check{
+    display: none;
+    position: absolute;
+    right: 30px;
+}
+
+
+
+.main_signIn_area{
+    width: 60px;
+    height: 18px;
+    background: #C4C4C4;
+    border-radius: 6px;
+    display: flex;
+    margin: 2px auto 5px auto;
+}
+
+.main_sign_text{
+    font-size: 12px;
+    color: #FFFFFF;
+    margin: auto;
+}
+
+.main_signUp_area{
+    width: 60px;
+    height: 18px;
+    background: #C4C4C4;
+    border-radius: 6px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.main_modal_member_modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.main_modal_member_modal.show {
+    display: block;
+}
+
+.main_modal_member_modal_body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 218px;
+    height: 221px;
+
+    padding: 10px;
+
+    text-align: center;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+
+.main_modal_member_modal_header_title{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    margin-left: 84px;
+}
+
+.main_modal_member_modal_delete_area{
+    display: flex;
+    margin-left: 47px;
+}
+
+.main_modal_member_modal_header{
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.main_modal_member_modal_search_area{
+    display: flex;
+}
+
+.main_modal_member_modal_search_input{
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 2px solid #C4C4C4;
+    width: 160px;
+    height: 30px;
+    margin: auto;
+    padding-right: 30px;
+}
+
+.main_modal_member_modal_search_input:focus{
+    outline: #FFFFFF;
+    border-bottom: 2px solid #0000FF;
+}
+
+.main_modal_member_modal_search_input::placeholder{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: #C4C4C4;
+}
+
+.main_modal_member_modal_user_info_detail{
+    width: 190px;
+    height: 137px;
+    margin: auto;
+    overflow: auto;
+}
+
+.main_modal_member_modal_user_info_area{
+    display: flex;
+}
+
+.main_modal_member_modal_user_profile{
+    width: 18px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: #C4C4C4;
+}
+
+.main_modal_member_modal_user_info_detail_area{
+    display: flex;
+    margin-top: 10px;
+}
+
+.main_modal_member_modal_user_name{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.74);
+}
+
+.main_modal_member_modal_user_name_area{
+    margin-left: 3px;
+    display: flex;
+}
+
+.main_modal_member_modal_user_check{
+    display: none;
+    position: absolute;
+    right: 30px;
+}
+
+
+
+.main_modal_lock_select_bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+}
+
+.main_modal_lock_select_bar.show {
+    display: block;
+}
+
+.main_modal_lock_select_bar_body {
+    position: absolute;
+    top: 63%;
+    left: 25%;
+
+    width: 90px;
+    height: 52px;
+
+    padding: 5px;
+
+    text-align: center;
+
+    background: #FFFFFF;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.main_modal_lock_select_bar_public_area{
+    height: 50%;
+    display: flex;
+}
+
+.main_modal_lock_select_bar_text{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    margin: auto;
+    color: rgba(0, 0, 0, 0.74);
+}
+
+.main_modal_lock_select_bar_private_area{
+    display: flex;
+    height: 50%;
+}
+
+
+.main_modal_category_select_bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+}
+
+.main_modal_category_select_bar.show {
+    display: block;
+}
+
+.main_modal_category_select_bar_body {
+    position: absolute;
+    top: 75%;
+    right: -20%;
+
+    width: 92px;
+    height: 159px;
+
+    padding: 17px;
+
+    text-align: center;
+
+    background: #FFFFFF;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+
+    transform: translateX(-50%) translateY(-50%);
+    overflow: auto;
+}
+
+.main_modal_category_select_bar_text{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    margin: auto;
+    color: rgba(0, 0, 0, 0.74);
+}
+
+.main_modal_category_select_bar_all_area{
+    height: 30px;
+    display: flex;
+}
+
+.main_modal_category_select_bar_etc_area{
+    height: 30px;
+    display: flex;
+}
+
+.main_modal_select_bar_under_bar{
+    border-bottom: 1.5px solid #E5E5E5;
+}
+
+.main_modal_submit_btn{
+    display: flex;
+    height: 30px;
+    background-color: #C4C4C4;
+    margin-top: 5px;
+    border-radius: 6px;
+}
+
+.main_modal_submit_txt{
+    color: white;
+    margin: auto;
+}
+
+
+
+.main_modal_category_filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+}
+
+.main_modal_category_filter.show {
+    display: block;
+}
+
+.main_modal_category_filter_body {
+    position: absolute;
+    top: 30%;
+    left: 15%;
+
+    width: 92px;
+    height: 159px;
+
+    padding: 17px;
+
+    text-align: center;
+
+    background: #FFFFFF;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+
+    transform: translateX(-50%) translateY(-50%);
+    overflow: auto;
+}
+
+.main_modal_category_filter_text{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    margin: auto;
+    color: rgba(0, 0, 0, 0.74);
+}
+
+.main_modal_category_filter_all_area{
+    height: 30px;
+    display: flex;
+}
+
+.main_modal_category_filter_etc_area{
+    height: 30px;
+    display: flex;
+}
+
+
+.main_search_text{
+    margin: auto 0 auto 29px;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    width: 300px;
+    border: 0;
+}
+
+.main_search_text::placeholder{
+    margin: auto;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    width: 250px;
+    color: #C4C4C4;
+}
+
+.main_search_text:focus{
+    outline:none;
 }

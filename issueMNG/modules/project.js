@@ -40,6 +40,21 @@ exports.find = function(req, res, callback){
     })
 }
 
+exports.findOne = function(req, res, callback){
+    let projectID = req.body.projectID
+    let resultList = []
+    Project.find(function(err, project){
+        if(err) console.log(err);
+        for(let i=0; i<project.length; i++){
+            if(String(project[i]._id) === projectID){
+                resultList.push(project[i])
+                return callback(resultList)
+            }
+        }
+        return callback(resultList)
+    })
+}
+
 
 //lastUpdate(22-01-13)
 //작업 : 현재 MongoDB에 들어있는 데이터중 req로 들어온 ID를 가진걸 삭제한다.

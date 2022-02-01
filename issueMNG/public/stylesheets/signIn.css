@@ -1,0 +1,101 @@
+.signin_content{
+    width: 100%;
+    height: 100vh;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; /* 수직 정렬 */
+
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; /* 수평 정렬 */
+}
+
+.signin_content > div{
+    width: 360px;
+}
+
+.signin_header_area{
+    display: flex;
+    width: 320px;
+    margin: 0 auto;
+}
+
+.signin_header_text{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+.signin_id_area{
+    display: flex;
+    width: 320px;
+    margin: 30px auto 30px auto;
+}
+
+.signin_pw_area{
+    display: flex;
+    width: 320px;
+    margin: 0 auto;
+}
+
+.signin_text_area{
+    width: 50px;
+}
+
+
+.signin_submit_btn_area{
+    display: flex;
+    width: 320px;
+    height: 40px;
+    background-color: #C4C4C4;
+    margin: 30px auto 0 auto;
+    border-radius: 6px;
+}
+
+.signin_submit_btn_text{
+    color: white;
+    margin: auto;
+}
+
+.signin_id_input{
+    width: 270px;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    padding-left: 5px;
+    font-size: 14px;
+    border-width: 0 0 1.5px 0;
+    border-color: #C4C4C4;
+    border-style: solid;
+}
+
+.signin_id_input:focus{
+    outline:none;
+    border-color: #0000FF;
+}
+
+.signin_pw_input{
+    width: 270px;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    padding-left: 5px;
+    font-size: 14px;
+    border-width: 0 0 1.5px 0;
+    border-color: #C4C4C4;
+    border-style: solid;
+}
+
+.signin_pw_input:focus{
+    outline:none;
+    border-color: #0000FF;
+}

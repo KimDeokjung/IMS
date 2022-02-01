@@ -11,22 +11,22 @@ const validateCredential = [
     body('username')
         .trim()
         .notEmpty()
-        .withMessage('username should be at least 5 characters'),
+        .withMessage('아이디를 입력해주세요.'),
     body('password')
         .trim()
         .isLength({ min: 5 })
-        .withMessage('password should be at least 5 characters'),
+        .withMessage('비밀번호는 최소 5 글자는 되어야 합니다.'),
     validate,
 ];
 
 const validateSignup = [
     ...validateCredential,
-    body('name').notEmpty().withMessage('name is missing'),
-    body('email').isEmail().normalizeEmail().withMessage('invalid email'),
-    body('url')
-        .isURL()
-        .withMessage('invalid URL')
-        .optional({ nullable: true, checkFalsy: true }),
+    body('name').notEmpty().withMessage('이름을 입력해주세요.'),
+    body('email').isEmail().normalizeEmail().withMessage('잘못된 형식의 이메일입니다.'),
+    // body('url')
+    //     .isURL()
+    //     .withMessage('invalid URL')
+    //     .optional({ nullable: true, checkFalsy: true }),
     validate,
 ];
 

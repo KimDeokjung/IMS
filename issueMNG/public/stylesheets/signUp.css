@@ -1,0 +1,124 @@
+.signup_content{
+    width: 100%;
+    height: 100vh;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; /* 수직 정렬 */
+
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; /* 수평 정렬 */
+}
+
+.signup_content > div{
+    width: 360px;
+}
+
+.signup_header_area{
+    display: flex;
+    width: 320px;
+    margin: 0 auto;
+}
+
+.signup_header_text{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+.signup_id_area{
+    display: flex;
+    width: 320px;
+    margin: 30px auto 30px auto;
+}
+
+.signup_pw_area{
+    display: flex;
+    width: 320px;
+    margin: 0 auto;
+}
+
+.signup_name_area{
+    display: flex;
+    width: 320px;
+    margin: 30px auto 0 auto;
+}
+
+.signup_text_area{
+    width: 70px;
+}
+
+
+.signup_submit_btn_area{
+    display: flex;
+    width: 320px;
+    height: 40px;
+    background-color: #C4C4C4;
+    margin: 30px auto 0 auto;
+    border-radius: 6px;
+}
+
+.signup_submit_btn_text{
+    color: white;
+    margin: auto;
+}
+
+.signup_id_input{
+    width: 250px;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    padding-left: 5px;
+    font-size: 14px;
+    border-width: 0 0 1.5px 0;
+    border-color: #C4C4C4;
+    border-style: solid;
+}
+
+.signup_id_input:focus{
+    outline:none;
+    border-color: #0000FF;
+}
+
+.signup_pw_input{
+    width: 250px;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    padding-left: 5px;
+    font-size: 14px;
+    border-width: 0 0 1.5px 0;
+    border-color: #C4C4C4;
+    border-style: solid;
+}
+
+.signup_pw_input:focus{
+    outline:none;
+    border-color: #0000FF;
+}
+
+.signup_name_input{
+    width: 250px;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    padding-left: 5px;
+    font-size: 14px;
+    border-width: 0 0 1.5px 0;
+    border-color: #C4C4C4;
+    border-style: solid;
+}
+
+.signup_name_input:focus{
+    outline:none;
+    border-color: #0000FF;
+}

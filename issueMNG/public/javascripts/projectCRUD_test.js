@@ -44,31 +44,44 @@ function ProjectCreateTest(){
 function ProjectReadTest(){
 
     $.ajax({
-        url: '/project/find',
+        url: '/todo',
         type: 'post',
+        data: {
+            todoid : 41,
+            content : "123",
+            completed : "ddd"
+        },
         success: function (result){
-
-            projectList = result
-
-            htmlList = "<h1> 리스트 </h1>"
-
-            for(let i = 0 ; i < result.length ; i++){
-                htmlList += "<li class='project_list'>"
-                htmlList += result[i].Explain
-                htmlList += "<button class='project_modify_btn'> 수정 </button>"
-                htmlList += "<button class='project_del_btn'> 삭제 </button>"
-                htmlList += "</li>"
-            }
-
-            document.getElementsByClassName('project_list_area')[0].innerHTML = htmlList
-
-            for(let i = 0 ; i < result.length ; i++) {
-                document.getElementsByClassName('project_modify_btn')[i].addEventListener('click', ProjectUpdateTest.bind(this, i))
-                document.getElementsByClassName('project_del_btn')[i].addEventListener('click', ProjectDeleteTest.bind(this, i))
-            }
-
+            console.log(result)
         }
     })
+
+    // $.ajax({
+    //     url: '/project/find',
+    //     type: 'post',
+    //     success: function (result){
+    //
+    //         projectList = result
+    //
+    //         htmlList = "<h1> 리스트 </h1>"
+    //
+    //         for(let i = 0 ; i < result.length ; i++){
+    //             htmlList += "<li class='project_list'>"
+    //             htmlList += result[i].Explain
+    //             htmlList += "<button class='project_modify_btn'> 수정 </button>"
+    //             htmlList += "<button class='project_del_btn'> 삭제 </button>"
+    //             htmlList += "</li>"
+    //         }
+    //
+    //         document.getElementsByClassName('project_list_area')[0].innerHTML = htmlList
+    //
+    //         for(let i = 0 ; i < result.length ; i++) {
+    //             document.getElementsByClassName('project_modify_btn')[i].addEventListener('click', ProjectUpdateTest.bind(this, i))
+    //             document.getElementsByClassName('project_del_btn')[i].addEventListener('click', ProjectDeleteTest.bind(this, i))
+    //         }
+    //
+    //     }
+    // })
 }
 
 //lastUpdate(22-01-13)

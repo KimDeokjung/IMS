@@ -82,8 +82,7 @@ exports.updateMany = function (req, res, callback){
 
 
 
-// const mongoose = require('mongoose');
-//
+
 // // Define Schemes
 // const issueSchema = new Issue
 //
