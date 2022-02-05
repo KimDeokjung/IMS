@@ -12,7 +12,8 @@ exports.insertMany = function(req, res, callback){
         Category : req.body.projectCategory,
         Host : req.body.projectHost,
         Members : req.body.projectMembers,
-        Created: Date.now()
+        Created: Date.now(),
+        Like: []
     })
 
     project
@@ -91,6 +92,70 @@ exports.updateMany = function (req, res, callback){
             }
             if(req.body.Explain) project.Explain = req.body.Explain;
 
+            project.save(function(err){
+                if(err) return callback(false);
+                return callback(true)
+            });
+        }
+    });
+}
+
+
+exports.findLikeNum = function (req, res, callback) {
+    Project.findById(req.body.ID, function(err, project){
+
+        if(err) return callback(false);
+        if(project === undefined || project === null || project.length === 0){
+            return callback(false)
+        }else{
+            return callback(String(project.Like.length))
+        }
+    });
+}
+
+
+exports.findCheckLike = function (req, res, callback, name) {
+    Project.findById(req.body.ID, function(err, project){
+
+        if(err) return callback(false);
+        if(project === undefined || project === null || project.length === 0){
+            return callback(false)
+        }else{
+            if(project.Like.includes(name)){
+                return callback(true)
+            }else{
+                return callback(false)
+            }
+        }
+    });
+}
+
+exports.updateLike = function (req, res, callback, name){
+    Project.findById(req.body.ID, function(err, project){
+
+        if(err) return callback(false);
+        if(project === undefined || project === null || project.length === 0){
+            return callback(false)
+        }else{
+            project.Like.push(name);
+            project.save(function(err){
+                if(err) return callback(false);
+                return callback(true)
+            });
+        }
+    });
+}
+
+exports.deleteLike = function (req, res, callback, name){
+    Project.findById(req.body.ID, function(err, project){
+
+        if(err) return callback(false);
+        if(project === undefined || project === null || project.length === 0){
+            return callback(false)
+        }else{
+            project.Like = project.Like.filter(function(item) {
+                return item !== name;
+            });
             project.save(function(err){
                 if(err) return callback(false);
                 return callback(true)

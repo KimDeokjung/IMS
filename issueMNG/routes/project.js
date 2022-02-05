@@ -10,7 +10,7 @@ const validateProject = [
 
 // Get Project Page.
 router.get('/', function(req, res, next) {
-    res.render('projectCRUD_test', { title: 'Express' });
+    res.render('project', { title: 'Express' , id: req.query.id});
 });
 
 //Project 생성 Post API
@@ -37,6 +37,14 @@ router.post('/find', function(req, res, next){
     });
 })
 
+//Project 검색 Post API
+//res : boolean 형태 (동작이 잘 끝났는지 여부)
+router.post('/findone', function(req, res, next){
+    project.findOne(req, res, function(callback){
+        res.send(callback)
+    });
+})
+
 
 //몽고 DB 선택 리스트 삭제 Delete API
 //req : json 형식 ( ID : 삭제 할 리스트의 아이디)
@@ -55,6 +63,30 @@ router.patch('/updateMany',function (req,res,next){
     project.updateMany(req,res,function (callback){
         res.send(callback)
     })
+})
+
+router.post('/likeNum',function (req,res,next){
+    project.findLikeNum(req,res,function (callback){
+        res.send(callback)
+    })
+})
+
+router.post('/checkLike',function (req,res,next){
+    project.findCheckLike(req,res,function (callback){
+        res.send(callback)
+    }, req.cookies.user)
+})
+
+router.post('/updateLike',function (req,res,next){
+    project.updateLike(req,res,function (callback){
+        res.send(callback)
+    }, req.cookies.user)
+})
+
+router.post('/deleteLike',function (req,res,next){
+    project.deleteLike(req,res,function (callback){
+        res.send(callback)
+    }, req.cookies.user)
 })
 
 

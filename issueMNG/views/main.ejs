@@ -5,17 +5,430 @@
 
     <!--css -->
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel='stylesheet' href='/stylesheets/main.css' />s
+    <link rel='stylesheet' href='/stylesheets/main.css' />
 
     <!--javaScript -->
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/javascripts/main.js"></script>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div class="main_content">
-    <div>
+<div class="main_modal_category_filter">
+    <div class="main_modal_category_filter_body">
+        <div class="main_modal_category_filter_all_area main_modal_filter_under_bar">
+            <div class="main_modal_category_filter_text ">
+                전체
+            </div>
+        </div>
+
+        <div class="main_modal_category_filter_all_area main_modal_filter_under_bar">
+            <div class="main_modal_category_filter_text">
+                프로젝트 관리
+            </div>
+        </div>
+
+        <div class="main_modal_category_filter_all_area main_modal_filter_under_bar">
+            <div class="main_modal_category_filter_text">
+                영업 및 CRM
+            </div>
+        </div>
+
+        <div class="main_modal_category_filter_all_area main_modal_filter_under_bar">
+            <div class="main_modal_category_filter_text">
+                마케팅
+            </div>
+        </div>
+
+        <div class="main_modal_category_filter_all_area main_modal_filter_under_bar">
+            <div class="main_modal_category_filter_text">
+                크리에이티브 및 디자인
+            </div>
+        </div>
+
+        <div class="main_modal_category_filter_all_area main_modal_filter_under_bar">
+            <div class="main_modal_category_filter_text">
+                소프트웨어 개발
+            </div>
+        </div>
+
+        <div class="main_modal_category_filter_all_area main_modal_filter_under_bar">
+            <div class="main_modal_category_filter_text">
+                작업 관리
+            </div>
+        </div>
+
+        <div class="main_modal_category_filter_all_area main_modal_filter_under_bar">
+            <div class="main_modal_category_filter_text">
+                운영
+            </div>
+        </div>
+
+        <div class="main_modal_category_filter_all_area main_modal_filter_under_bar">
+            <div class="main_modal_category_filter_text">
+                HR 및 채용
+            </div>
+        </div>
+
+        <div class="main_modal_category_filter_all_area main_modal_filter_under_bar">
+            <div class="main_modal_category_filter_text">
+                IT
+            </div>
+        </div>
+
+        <div class="main_modal_category_filter_all_area">
+            <div class="main_modal_category_filter_text">
+                기타
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main_modal">
+    <div class="main_modal_body">
+
+        <div class="main_modal_lock_select_bar">
+            <div class="main_modal_lock_select_bar_body">
+                <div class="main_modal_lock_select_bar_public_area main_modal_select_bar_under_bar">
+                    <div class="main_modal_lock_select_bar_text">
+                        공개
+                    </div>
+                </div>
+                <div class="main_modal_lock_select_bar_public_area">
+                    <div class="main_modal_lock_select_bar_text">
+                        비공개
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_modal_category_select_bar">
+            <div class="main_modal_category_select_bar_body">
+                <div class="main_modal_category_select_bar_all_area main_modal_select_bar_under_bar">
+                    <div class="main_modal_category_select_bar_text ">
+                        전체
+                    </div>
+                </div>
+
+                <div class="main_modal_category_select_bar_all_area main_modal_select_bar_under_bar">
+                    <div class="main_modal_category_select_bar_text">
+                        프로젝트 관리
+                    </div>
+                </div>
+
+                <div class="main_modal_category_select_bar_all_area main_modal_select_bar_under_bar">
+                    <div class="main_modal_category_select_bar_text">
+                        영업 및 CRM
+                    </div>
+                </div>
+
+                <div class="main_modal_category_select_bar_all_area main_modal_select_bar_under_bar">
+                    <div class="main_modal_category_select_bar_text">
+                        마케팅
+                    </div>
+                </div>
+
+                <div class="main_modal_category_select_bar_all_area main_modal_select_bar_under_bar">
+                    <div class="main_modal_category_select_bar_text">
+                        크리에이티브 및 디자인
+                    </div>
+                </div>
+
+                <div class="main_modal_category_select_bar_all_area main_modal_select_bar_under_bar">
+                    <div class="main_modal_category_select_bar_text">
+                        소프트웨어 개발
+                    </div>
+                </div>
+
+                <div class="main_modal_category_select_bar_all_area main_modal_select_bar_under_bar">
+                    <div class="main_modal_category_select_bar_text">
+                        작업 관리
+                    </div>
+                </div>
+
+                <div class="main_modal_category_select_bar_all_area main_modal_select_bar_under_bar">
+                    <div class="main_modal_category_select_bar_text">
+                        운영
+                    </div>
+                </div>
+
+                <div class="main_modal_category_select_bar_all_area main_modal_select_bar_under_bar">
+                    <div class="main_modal_category_select_bar_text">
+                        HR 및 채용
+                    </div>
+                </div>
+
+                <div class="main_modal_category_select_bar_all_area main_modal_select_bar_under_bar">
+                    <div class="main_modal_category_select_bar_text">
+                        IT
+                    </div>
+                </div>
+
+                <div class="main_modal_category_select_bar_all_area">
+                    <div class="main_modal_category_select_bar_text">
+                        기타
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_modal_header">
+            <div class="main_modal_header_title">
+                프로젝트 생성
+            </div>
+            <div class="main_modal_delete_area">
+                <img
+                        src="/images/delete_icon.png"
+                        alt='delete' />
+            </div>
+        </div>
+        <div class="main_modal_project_thumbnail_area">
+            <img
+                    class='main_modal_project_thumbnail'
+                    src="/images/project_thumbnail_image.png"
+                    alt='search' />
+        </div>
+
+        <div class="main_modal_project_title_area">
+            <input
+                    class="main_modal_project_title_input"
+                    placeholder="프로젝트 이름을 입력하세요">
+        </div>
+
+        <div class="main_modal_project_option_area">
+            <div class="main_modal_project_option_piece">
+                <div class="main_modal_project_master_area">
+                    <img
+                            class="main_modal_project_option_icon"
+                            src="/images/member_icon.png"
+                            alt='member' />
+
+                    <div class="main_modal_project_option_title">
+                        담당자 선택
+                    </div>
+                    <img
+                            class="main_modal_project_option_filter_icon"
+                            src="/images/filter_icon.png"
+                            alt='search' />
+                </div>
+                <div class="main_modal_project_member_area">
+                    <img
+                            class="main_modal_project_option_icon"
+                            src="/images/member_icon.png"
+                            alt='member' />
+
+                    <div class="main_modal_project_option_title">
+                        맴버 선택
+                    </div>
+                    <img
+                            class="main_modal_project_option_filter_icon"
+                            src="/images/filter_icon.png"
+                            alt='search' />
+                </div>
+            </div>
+            <div class="main_modal_project_option_piece">
+                <div class="main_modal_project_private_area">
+                    <img
+                            class="main_modal_project_option_icon"
+                            src="/images/private_icon.png"
+                            alt='member' />
+
+                    <div class="main_modal_project_option_title">
+                        공개 범위
+                    </div>
+                    <img
+                            class="main_modal_project_option_filter_icon"
+                            src="/images/filter_icon.png"
+                            alt='search' />
+                </div>
+                <div class="main_modal_project_category_area">
+                    <img
+                            class="main_modal_project_option_icon"
+                            src="/images/category_icon.png"
+                            alt='member' />
+
+                    <div class="main_modal_project_option_title">
+                        분류
+                    </div>
+                    <img
+                            class="main_modal_project_option_filter_icon"
+                            src="/images/filter_icon.png"
+                            alt='search' />
+                </div>
+            </div>
+        </div>
+        <textarea class="main_modal_text_area"></textarea>
+        <div class="main_modal_submit_btn">
+            <div class="main_modal_submit_txt">
+                생성
+            </div>
+        </div>
 
     </div>
 </div>
+
+<div class="main_modal_master_modal">
+    <div class="main_modal_master_modal_body">
+        <div class="main_modal_master_modal_header">
+            <div class="main_modal_master_modal_header_title">
+                담당자 선택
+            </div>
+            <div class="main_modal_master_modal_delete_area">
+                <img
+                        src="/images/delete_icon.png"
+                        alt='delete' />
+            </div>
+        </div>
+
+        <div class="main_modal_master_modal_search_area">
+            <input class="main_modal_master_modal_search_input" placeholder="유저를 검색해 주세요"/>
+        </div>
+
+        <div class="main_modal_master_modal_user_info_area">
+            <div class="main_modal_master_modal_user_info_detail">
+                <div class="main_modal_master_modal_user_info_detail_area">
+                    <div class="main_modal_master_modal_user_profile">
+                    </div>
+                    <div class="main_modal_master_modal_user_name_area">
+                        <div class="main_modal_master_modal_user_name">
+                            test1
+                        </div>
+                    </div>
+                    <div class="main_modal_master_modal_user_check">
+                        <img
+                                src="/images/check_icon.png"
+                                alt='delete' />
+                    </div>
+                </div>
+
+                <div class="main_modal_master_modal_user_info_detail_area">
+                    <div class="main_modal_master_modal_user_profile">
+                    </div>
+                    <div class="main_modal_master_modal_user_name_area">
+                        <div class="main_modal_master_modal_user_name">
+                            test2
+                        </div>
+                    </div>
+                    <div class="main_modal_master_modal_user_check">
+                        <img
+                                src="/images/check_icon.png"
+                                alt='delete' />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main_modal_member_modal">
+    <div class="main_modal_member_modal_body">
+        <div class="main_modal_member_modal_header">
+            <div class="main_modal_member_modal_header_title">
+                맴버 선택
+            </div>
+            <div class="main_modal_member_modal_delete_area">
+                <img
+                        src="/images/delete_icon.png"
+                        alt='delete' />
+            </div>
+        </div>
+
+        <div class="main_modal_member_modal_search_area">
+            <input class="main_modal_member_modal_search_input" placeholder="유저를 검색해 주세요"/>
+        </div>
+
+        <div class="main_modal_member_modal_user_info_area">
+            <div class="main_modal_member_modal_user_info_detail">
+                <div class="main_modal_member_modal_user_info_detail_area">
+                    <div class="main_modal_member_modal_user_profile">
+                    </div>
+                    <div class="main_modal_member_modal_user_name_area">
+                        <div class="main_modal_member_modal_user_name">
+                            test1
+                        </div>
+                    </div>
+                    <div class="main_modal_member_modal_user_check">
+                        <img
+                                src="/images/check_icon.png"
+                                alt='delete' />
+                    </div>
+                </div>
+
+                <div class="main_modal_member_modal_user_info_detail_area">
+                    <div class="main_modal_member_modal_user_profile">
+                    </div>
+                    <div class="main_modal_member_modal_user_name_area">
+                        <div class="main_modal_member_modal_user_name">
+                            test2
+                        </div>
+                    </div>
+                    <div class="main_modal_member_modal_user_check">
+                        <img
+                                src="/images/check_icon.png"
+                                alt='delete' />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="main_header">
+        <input
+            placeholder="원하는 검색어를 입력해 주세요..."
+            class="main_search_text"
+        >
+        <div class="main_header_search_icon_area">
+            <img
+                    class='main_header_search_icon'
+                    src="/images/search_icon.png"
+                    alt='search' />
+        </div>
+    </div>
+
+    <div class="main_title_area">
+        <div class="main_title_left_area">
+        </div>
+        <div class="main_title_middle_area">
+            <div class="main_title_text">
+                프로젝트
+            </div>
+        </div>
+<!--        <div class="main_title_right_area">-->
+<!--            <div class="main_signIn_area">-->
+<!--                <div class="main_sign_text">-->
+<!--                    로그인-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="main_signUp_area">-->
+<!--                <div class="main_sign_text">-->
+<!--                    회원 가입-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+
+    <div class="main_topbar_area">
+        <div class="main_category_area">
+            <div class="main_maring_auto">
+                분류
+            </div>
+        </div>
+        <div class="main_upload_project_area">
+            <div class="main_maring_auto">
+                내가 업로드한 프로젝트
+            </div>
+        </div>
+        <div class="main_create_project_area">
+            <div class="main_maring_auto">
+                프로젝트 생성
+            </div>
+        </div>
+    </div>
+    <div class="main_content">
+
+    </div>
 </body>
 </html>

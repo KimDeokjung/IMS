@@ -19,6 +19,7 @@ var ProjectSchema = new mongoose.Schema({
     Category : {type: String, default: ""},
     Host : {type: String, default: ""},
     Members : {type: Array, default: []},
+    Like : {type: Array, default: []},
 }, {
     versionKey: false
 });

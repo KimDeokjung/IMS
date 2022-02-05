@@ -1,5 +1,6 @@
 let projectExplain = ""
 let projectEdit = true
+let IsLike = false
 
 window.onload = function(){
     document.getElementsByClassName('project_header_backbtn_area')[0].addEventListener('click', goPageMain)
@@ -9,12 +10,86 @@ window.onload = function(){
     document.getElementsByClassName('project_option_edit_icon')[0].addEventListener('click', editProject)
     document.getElementsByClassName('project_explain_edit_cancel_area')[0].addEventListener('click', cancelProjectEdit)
     document.getElementsByClassName('project_explain_edit_submit_area')[0].addEventListener('click', modifyProjectEdit)
+    document.getElementsByClassName('project_option_heart_icon')[0].addEventListener('click', clickLikeBtn)
 
     loadPage(window.location.search.split('?')[1].split('=')[1])
+    loadLike()
 }
 
 function goPageMain(){
     location.href='/'
+}
+
+function loadLike(){
+    $.ajax({
+        url: '/project/checkLike',
+        type: 'post',
+        async: false,
+        datatype: 'json',
+        data: {
+            ID: window.location.search.split('?')[1].split('=')[1],
+        },
+        success: function (result){
+            if(result){
+                document.getElementsByClassName('project_option_heart_icon')[0].src = '/images/heart_icon_on.png'
+                IsLike = true
+            }else{
+                document.getElementsByClassName('project_option_heart_icon')[0].src = '/images/heart_icon_off.png'
+            }
+        }
+    })
+
+    $.ajax({
+        url: '/project/likeNum',
+        type: 'post',
+        async: false,
+        datatype: 'json',
+        data: {
+            ID: window.location.search.split('?')[1].split('=')[1],
+        },
+        success: function (result){
+            if(result){
+                document.getElementsByClassName('project_option_heart_num')[0].innerHTML = result
+            }else{
+            }
+        }
+    })
+}
+
+function clickLikeBtn() {
+    let imgDoc = document.getElementsByClassName('project_option_heart_icon')[0]
+    let likenum = document.getElementsByClassName('project_option_heart_num')[0].innerHTML
+
+    likenum = parseInt(likenum)
+
+    if(IsLike){
+        imgDoc.src = '/images/heart_icon_off.png'
+        document.getElementsByClassName('project_option_heart_num')[0].innerHTML = likenum - 1
+        IsLike = false
+        $.ajax({
+            url: '/project/deleteLike',
+            type: 'post',
+            data: {
+                ID: window.location.search.split('?')[1].split('=')[1],
+            },
+            success: function (result){
+            }
+        })
+    }else{
+        imgDoc.src = '/images/heart_icon_on.png'
+        document.getElementsByClassName('project_option_heart_num')[0].innerHTML = likenum + 1
+        IsLike = true
+        $.ajax({
+            url: '/project/updateLike',
+            type: 'post',
+            data: {
+                ID: window.location.search.split('?')[1].split('=')[1],
+            },
+            success: function (result){
+            }
+        })
+    }
+
 }
 
 function editProject(){
