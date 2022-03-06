@@ -111,6 +111,8 @@
     border-radius: 10px 10px 0 0;
     background: #C4C4C4;
     display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .main_project_bottom_area{
@@ -125,6 +127,7 @@
     margin: auto;
     height: 46px;
     width: 46px;
+    margin-top: 18px;
 }
 
 .main_project_title{
@@ -829,4 +832,10 @@
 
 .main_search_text:focus{
     outline:none;
+}
+
+.main_project_date_area{
+    color: white;
+    margin-right: 10px;
+    margin-top: 3px;
 }

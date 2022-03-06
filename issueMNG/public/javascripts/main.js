@@ -46,10 +46,14 @@ window.onload = function(){
 }
 
 function projectCreateModal(){
+    var x=window.scrollX;
+    var y=window.scrollY;
+    window.onscroll=function(){window.scrollTo(x, y);};
     document.getElementsByClassName('main_modal')[0].style.display = 'block';
 }
 
 function projectDeleteModal(){
+    window.onscroll=function(){};
     document.getElementsByClassName('main_modal')[0].style.display = 'none';
 }
 
@@ -184,11 +188,16 @@ function loadProject(){
             projectList = result
             nowProjectList = result
 
+            console.log(result)
+
             htmlList += "<div>"
 
             for(let i = 0 ; i < result.length ; i++){
                 htmlList += "            <div class=\"main_project_area\">\n" +
                     "                <div class=\"main_project_top_area\">\n" +
+                    "                    <div class=\"main_project_date_area\">"
+                htmlList += result[i].Created.substring(0,10)
+                htmlList += "</div>\n" +
                     "                    <img\n" +
                     "                            class='main_project_defalt_icon'\n" +
                     "                            src=\"/images/defalt_image_icon.png\"\n" +

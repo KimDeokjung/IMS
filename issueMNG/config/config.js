@@ -15,3 +15,4 @@ module.exports = {
     "bcryptSaltRounds": process.env.BCRYPT_SALT_ROUNDS
   }
 }
+

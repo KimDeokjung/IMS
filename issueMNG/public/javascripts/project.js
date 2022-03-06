@@ -1,6 +1,8 @@
 let projectExplain = ""
 let projectEdit = true
 let IsLike = false
+let issueFilter = true
+let reviewFilter = true
 
 window.onload = function(){
     document.getElementsByClassName('project_header_backbtn_area')[0].addEventListener('click', goPageMain)
@@ -11,6 +13,8 @@ window.onload = function(){
     document.getElementsByClassName('project_explain_edit_cancel_area')[0].addEventListener('click', cancelProjectEdit)
     document.getElementsByClassName('project_explain_edit_submit_area')[0].addEventListener('click', modifyProjectEdit)
     document.getElementsByClassName('project_option_heart_icon')[0].addEventListener('click', clickLikeBtn)
+    document.getElementsByClassName('project_review_filter_area')[0].addEventListener('click', ReviewFilter)
+    document.getElementsByClassName('project_issue_filter_area')[0].addEventListener('click', IssueFilter)
 
     loadPage(window.location.search.split('?')[1].split('=')[1])
     loadLike()
@@ -155,13 +159,11 @@ function displayIssueWriteArea(){
     let issue = document.getElementsByClassName('project_issue_write_area')[0]
     let review = document.getElementsByClassName('project_review_write_area')[0]
 
-    review.style.display = 'none'
-
-    if (issue.style.display === 'block'){
-        issue.style.display = 'none'
-    }else{
-        issue.style.display = 'block'
+    if(review.classList.length === 2){
+        review.classList.toggle('project_review_write_area_act');
     }
+
+    issue.classList.toggle('project_issue_write_area_act');
 
 }
 
@@ -169,17 +171,35 @@ function displayReviewWriteArea(){
     let issue = document.getElementsByClassName('project_issue_write_area')[0]
     let review = document.getElementsByClassName('project_review_write_area')[0]
 
-    issue.style.display = 'none'
-
-    if (review.style.display === 'block'){
-        review.style.display = 'none'
-    }else{
-        review.style.display = 'block'
+    if(issue.classList.length === 2){
+        issue.classList.toggle('project_issue_write_area_act');
     }
+
+    review.classList.toggle('project_review_write_area_act');
 
 }
 
 
 function ReviewWrite(){
 
+}
+
+function ReviewFilter(){
+    if(reviewFilter){
+        document.getElementsByClassName('project_review_user_full_area')[0].style.display = 'none'
+        reviewFilter = false
+    }else{
+        document.getElementsByClassName('project_review_user_full_area')[0].style.display = 'block'
+        reviewFilter = true
+    }
+}
+
+function IssueFilter(){
+    if(issueFilter){
+        document.getElementsByClassName('project_issue_user_full_area')[0].style.display = 'none'
+        issueFilter = false
+    }else{
+        document.getElementsByClassName('project_issue_user_full_area')[0].style.display = 'block'
+        issueFilter = true
+    }
 }
